@@ -8,6 +8,8 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+
 @Controller
 @RequestMapping("/books")
 public class BookController {
@@ -33,6 +35,7 @@ public class BookController {
         bookRepository.save(book);
         return "redirect:/books/list";
     }
+
     @RequestMapping("/edit/{id}")
     public String editBook(@PathVariable("id")int bookid, Model model){
         Book book = new Book();
