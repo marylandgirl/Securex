@@ -27,6 +27,10 @@
         </tr>
         <tr th:each="row : ${books}">
             <td></td>
+<!--            <td th:text="${row.image}"></td>-->
+            <td>
+                <img th:src="${row.image}" th:height="100px" th:width="100px"/>
+            </td>
             <td th:text="${row.title}"></td>
             <td th:text="${row.author}"></td>
             <td><a href="#" th:href="@{/books/edit/{bookid} (bookid = ${row.id})}">Update</a> -
